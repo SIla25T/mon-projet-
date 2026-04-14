@@ -1,0 +1,46 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
+  <diagram name="Page-1" id="BT7m3ydmMJL1_MjxJtVG">
+    <mxGraphModel dx="1083" dy="771" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="_YumjZHa9L8cN21P9MLv-2" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Classes&lt;/h1&gt;&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;meta&lt;/li&gt;&lt;ul&gt;&lt;li&gt;titre&lt;/li&gt;&lt;li&gt;auteur&lt;/li&gt;&lt;li&gt;année&lt;/li&gt;&lt;li&gt;source&lt;/li&gt;&lt;li&gt;langue&lt;/li&gt;&lt;li&gt;genre&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;characters&lt;/li&gt;&lt;ul&gt;&lt;li&gt;id&lt;/li&gt;&lt;li&gt;noms&lt;/li&gt;&lt;li&gt;alias&lt;/li&gt;&lt;li&gt;role&lt;/li&gt;&lt;li&gt;genre&lt;/li&gt;&lt;li&gt;traits&lt;/li&gt;&lt;li&gt;status&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;locations&lt;/li&gt;&lt;ul&gt;&lt;li&gt;id&lt;/li&gt;&lt;li&gt;nom&lt;/li&gt;&lt;li&gt;type&lt;/li&gt;&lt;li&gt;description&lt;/li&gt;&lt;li&gt;atmosphere&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;events&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;id&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;nom&lt;/span&gt;&lt;/li&gt;&lt;li&gt;ordre&lt;/li&gt;&lt;li&gt;description&lt;/li&gt;&lt;li&gt;participants&lt;/li&gt;&lt;li&gt;lieu&lt;/li&gt;&lt;li&gt;type&lt;/li&gt;&lt;li&gt;trigger&lt;/li&gt;&lt;li&gt;conséquence&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;relations&lt;/li&gt;&lt;ul&gt;&lt;li&gt;id&lt;/li&gt;&lt;li&gt;sujet&lt;/li&gt;&lt;li&gt;prédiction&lt;/li&gt;&lt;li&gt;objet&lt;/li&gt;&lt;li&gt;type&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;rules&lt;/li&gt;&lt;ul&gt;&lt;li&gt;id&lt;/li&gt;&lt;li&gt;desciption&lt;/li&gt;&lt;li&gt;type&lt;/li&gt;&lt;li&gt;affects(?)&lt;/li&gt;&lt;li&gt;évènements concernés&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="690" width="290" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="_YumjZHa9L8cN21P9MLv-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Nada" vertex="1">
+          <mxGeometry height="60" width="120" x="430" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="_YumjZHa9L8cN21P9MLv-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="Ilana" vertex="1">
+          <mxGeometry height="60" width="120" x="610" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="_YumjZHa9L8cN21P9MLv-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Théo" vertex="1">
+          <mxGeometry height="60" width="120" x="790" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="_YumjZHa9L8cN21P9MLv-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Valentin" vertex="1">
+          <mxGeometry height="60" width="120" x="970" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="_YumjZHa9L8cN21P9MLv-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Alyssa" vertex="1">
+          <mxGeometry height="60" width="120" x="1150" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="_YumjZHa9L8cN21P9MLv-10" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" value="meta" vertex="1">
+          <mxGeometry height="80" width="120" x="690" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="_YumjZHa9L8cN21P9MLv-11" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" value="characters" vertex="1">
+          <mxGeometry height="80" width="120" x="690" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="_YumjZHa9L8cN21P9MLv-12" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" value="locations" vertex="1">
+          <mxGeometry height="80" width="120" x="690" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="_YumjZHa9L8cN21P9MLv-13" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" value="rules" vertex="1">
+          <mxGeometry height="80" width="120" x="690" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="_YumjZHa9L8cN21P9MLv-14" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" value="relations" vertex="1">
+          <mxGeometry height="80" width="120" x="690" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="_YumjZHa9L8cN21P9MLv-15" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" value="events" vertex="1">
+          <mxGeometry height="80" width="120" x="690" y="310" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
