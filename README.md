@@ -2,10 +2,10 @@
 Combinaison de deux ontologies de narration
 
 ## Description
-Prendre deux ontologies (fantastique) et les fusionner en une ontologie enrichie. Le programme détecte les éléments communs, résout les conflits (personnages homonymes, lieux similaires) et produit une ontologie combinée.
+Prendre deux ontologies (contes) et les fusionner en une ontologie enrichie. Le programme détecte les éléments communs, résout les conflits (personnages homonymes, lieux similaires) et produit une ontologie combinée.
 
 
-Développement d'un front end qui permets d'ajouter deux textes fantastiques (format txt) pour pouvoir ensuite les fusionner par une stratégie de fusion prédefinie. 
+Développement d'un front end qui permets d'ajouter deux textes contes (format json) pour pouvoir ensuite les fusionner par une stratégie de fusion prédefinie. 
 
 ## Histoire 
 ### "Shadows in the Moonlight" by Robert E. Howard :
@@ -29,9 +29,10 @@ https://www.gutenberg.org/ebooks/1064
 * rules 
 
 ## Membres du groupe : 
-* Valentin Armbruster
-* Théo Esseiva 
-* Nada Waly
-* Alyssa Gheza
-* Ilana Senape 
+* Valentin Armbruster => 
+* Théo Esseiva => interface graphique (front-end) 
+* Nada Waly => 
+* Alyssa Gheza => classes
+* Ilana Senape => inputs et pipline 
+=> outputs + ontologie
 
