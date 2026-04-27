@@ -8,4 +8,5 @@ class Conte(ABC):
     @abstractmethod
     def id(self):
         """retourne l'id de la constituante du conte"""
-    def 
+    def conflit(self):
+        """retourne les conflits entre les contes"""
