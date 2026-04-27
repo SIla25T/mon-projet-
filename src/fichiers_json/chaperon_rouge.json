@@ -1,0 +1,402 @@
+{
+  "meta": {
+    "title": "Cendrillon ou la Petite Pantoufle de Verre",
+    "author": "Charles Perrault",
+    "year": 1697,
+    "source": "https://www.gutenberg.org/ebooks/19752",
+    "language": "fr",
+    "domain": "conte merveilleux"
+  },
+
+  "characters": [
+    {
+      "id": "char_01",
+      "name": "Cendrillon",
+      "aliases": ["la belle enfant", "Cucendron"],
+      "role": "protagoniste",
+      "gender": "F",
+      "traits": ["douce", "courageuse", "patiente", "belle"],
+      "status": "vivant"
+    },
+    {
+      "id": "char_02",
+      "name": "La Marâtre",
+      "aliases": ["la belle-mère"],
+      "role": "antagoniste",
+      "gender": "F",
+      "traits": ["cruelle", "jalouse", "autoritaire"],
+      "status": "vivant"
+    },
+    {
+      "id": "char_03",
+      "name": "Anastasie",
+      "aliases": ["la première demi-sœur"],
+      "role": "antagoniste secondaire",
+      "gender": "F",
+      "traits": ["vaniteuse", "méchante"],
+      "status": "vivant"
+    },
+    {
+      "id": "char_04",
+      "name": "Javotte",
+      "aliases": ["la seconde demi-sœur"],
+      "role": "antagoniste secondaire",
+      "gender": "F",
+      "traits": ["vaniteuse", "méchante"],
+      "status": "vivant"
+    },
+    {
+      "id": "char_05",
+      "name": "La Fée Marraine",
+      "aliases": ["la fée"],
+      "role": "adjuvant",
+      "gender": "F",
+      "traits": ["bienveillante", "puissante", "sage"],
+      "status": "immortel"
+    },
+    {
+      "id": "char_06",
+      "name": "Le Prince",
+      "aliases": ["le fils du roi"],
+      "role": "adjuvant / intérêt romantique",
+      "gender": "M",
+      "traits": ["noble", "amoureux", "déterminé"],
+      "status": "vivant"
+    },
+    {
+      "id": "char_07",
+      "name": "Le Père",
+      "aliases": ["le gentilhomme"],
+      "role": "secondaire",
+      "gender": "M",
+      "traits": ["faible", "influençable"],
+      "status": "vivant"
+    }
+  ],
+
+  "locations": [
+    {
+      "id": "loc_01",
+      "name": "Maison familiale",
+      "type": "habitation",
+      "description": "Demeure du père, où Cendrillon est contrainte aux travaux domestiques.",
+      "atmosphere": "oppressante"
+    },
+    {
+      "id": "loc_02",
+      "name": "Cuisine",
+      "type": "pièce",
+      "parent_location": "loc_01",
+      "description": "Lieu où Cendrillon dort près des cendres.",
+      "atmosphere": "sombre"
+    },
+    {
+      "id": "loc_03",
+      "name": "Palais Royal",
+      "type": "bâtiment royal",
+      "description": "Résidence du roi et du prince, lieu des bals.",
+      "atmosphere": "festive et lumineuse"
+    },
+    {
+      "id": "loc_04",
+      "name": "Salle de bal",
+      "type": "salle",
+      "parent_location": "loc_03",
+      "description": "Grande salle où se déroule le bal royal.",
+      "atmosphere": "éblouissante"
+    },
+    {
+      "id": "loc_05",
+      "name": "Jardin",
+      "type": "extérieur",
+      "parent_location": "loc_01",
+      "description": "Jardin où la fée réalise la transformation magique.",
+      "atmosphere": "mystérieuse"
+    },
+    {
+      "id": "loc_06",
+      "name": "Escalier du palais",
+      "type": "passage",
+      "parent_location": "loc_03",
+      "description": "Escalier sur lequel Cendrillon perd sa pantoufle en fuyant.",
+      "atmosphere": "dramatique"
+    }
+  ],
+
+  "events": [
+    {
+      "id": "evt_01",
+      "name": "Mort de la mère de Cendrillon",
+      "order": 1,
+      "description": "La mère de Cendrillon décède, laissant la jeune fille seule avec son père.",
+      "participants": ["char_01", "char_07"],
+      "location": null,
+      "type": "tragique",
+      "trigger": null,
+      "consequence": "evt_02"
+    },
+    {
+      "id": "evt_02",
+      "name": "Remariage du père",
+      "order": 2,
+      "description": "Le père épouse une veuve hautaine qui a deux filles.",
+      "participants": ["char_07", "char_02", "char_03", "char_04"],
+      "location": "loc_01",
+      "type": "social",
+      "trigger": "evt_01",
+      "consequence": "evt_03"
+    },
+    {
+      "id": "evt_03",
+      "name": "Mise en servitude de Cendrillon",
+      "order": 3,
+      "description": "La marâtre contraint Cendrillon aux travaux les plus pénibles.",
+      "participants": ["char_01", "char_02"],
+      "location": "loc_02",
+      "type": "conflit",
+      "trigger": "evt_02",
+      "consequence": null
+    },
+    {
+      "id": "evt_04",
+      "name": "Annonce du bal royal",
+      "order": 4,
+      "description": "Le prince organise un bal auquel toutes les demoiselles sont conviées.",
+      "participants": ["char_06"],
+      "location": "loc_03",
+      "type": "social",
+      "trigger": null,
+      "consequence": "evt_05"
+    },
+    {
+      "id": "evt_05",
+      "name": "Préparatifs des demi-sœurs",
+      "order": 5,
+      "description": "Anastasie et Javotte se préparent pour le bal en faisant travailler Cendrillon.",
+      "participants": ["char_01", "char_03", "char_04"],
+      "location": "loc_01",
+      "type": "quotidien",
+      "trigger": "evt_04",
+      "consequence": "evt_06"
+    },
+    {
+      "id": "evt_06",
+      "name": "Apparition de la fée marraine",
+      "order": 6,
+      "description": "La fée marraine apparaît à Cendrillon en pleurs et lui promet son aide.",
+      "participants": ["char_01", "char_05"],
+      "location": "loc_05",
+      "type": "magique",
+      "trigger": "evt_05",
+      "consequence": "evt_07"
+    },
+    {
+      "id": "evt_07",
+      "name": "Transformation magique",
+      "order": 7,
+      "description": "La fée transforme une citrouille en carrosse, des souris en chevaux et Cendrillon en princesse.",
+      "participants": ["char_01", "char_05"],
+      "location": "loc_05",
+      "type": "magique",
+      "trigger": "evt_06",
+      "consequence": "evt_08"
+    },
+    {
+      "id": "evt_08",
+      "name": "Avertissement de minuit",
+      "order": 8,
+      "description": "La fée avertit Cendrillon que le charme prendra fin à minuit.",
+      "participants": ["char_01", "char_05"],
+      "location": "loc_05",
+      "type": "contrainte magique",
+      "trigger": "evt_07",
+      "consequence": "evt_11"
+    },
+    {
+      "id": "evt_09",
+      "name": "Bal royal — première nuit",
+      "order": 9,
+      "description": "Cendrillon arrive au bal et éblouit toute la cour, notamment le prince.",
+      "participants": ["char_01", "char_06", "char_03", "char_04"],
+      "location": "loc_04",
+      "type": "social / romantique",
+      "trigger": "evt_07",
+      "consequence": "evt_10"
+    },
+    {
+      "id": "evt_10",
+      "name": "Départ avant minuit — première nuit",
+      "order": 10,
+      "description": "Cendrillon quitte discrètement le bal avant minuit et retrouve ses habits ordinaires.",
+      "participants": ["char_01"],
+      "location": "loc_06",
+      "type": "fuite",
+      "trigger": "evt_08",
+      "consequence": null
+    },
+    {
+      "id": "evt_11",
+      "name": "Bal royal — deuxième nuit",
+      "order": 11,
+      "description": "Cendrillon retourne au bal, le prince est de plus en plus épris d'elle.",
+      "participants": ["char_01", "char_06"],
+      "location": "loc_04",
+      "type": "romantique",
+      "trigger": null,
+      "consequence": "evt_12"
+    },
+    {
+      "id": "evt_12",
+      "name": "Fuite à minuit — perte de la pantoufle",
+      "order": 12,
+      "description": "Cendrillon fuit à minuit et perd une pantoufle de verre sur l'escalier.",
+      "participants": ["char_01"],
+      "location": "loc_06",
+      "type": "tournant dramatique",
+      "trigger": "evt_11",
+      "consequence": "evt_13"
+    },
+    {
+      "id": "evt_13",
+      "name": "Quête de la pantoufle",
+      "order": 13,
+      "description": "Le prince fait essayer la pantoufle à toutes les jeunes filles du royaume.",
+      "participants": ["char_06", "char_03", "char_04"],
+      "location": "loc_01",
+      "type": "quête",
+      "trigger": "evt_12",
+      "consequence": "evt_14"
+    },
+    {
+      "id": "evt_14",
+      "name": "Reconnaissance de Cendrillon",
+      "order": 14,
+      "description": "La pantoufle va au pied de Cendrillon ; elle révèle l'autre pantoufle et se transforme à nouveau.",
+      "participants": ["char_01", "char_06"],
+      "location": "loc_01",
+      "type": "révélation",
+      "trigger": "evt_13",
+      "consequence": "evt_15"
+    },
+    {
+      "id": "evt_15",
+      "name": "Mariage de Cendrillon et du Prince",
+      "order": 15,
+      "description": "Cendrillon épouse le prince et pardonne à ses demi-sœurs.",
+      "participants": ["char_01", "char_06", "char_03", "char_04"],
+      "location": "loc_03",
+      "type": "dénouement heureux",
+      "trigger": "evt_14",
+      "consequence": null
+    }
+  ],
+
+  "relations": [
+    {
+      "id": "rel_01",
+      "subject": "char_01",
+      "predicate": "est_fille_de",
+      "object": "char_07",
+      "type": "familiale"
+    },
+    {
+      "id": "rel_02",
+      "subject": "char_02",
+      "predicate": "est_belle_mère_de",
+      "object": "char_01",
+      "type": "familiale"
+    },
+    {
+      "id": "rel_03",
+      "subject": "char_03",
+      "predicate": "est_demi_sœur_de",
+      "object": "char_01",
+      "type": "familiale"
+    },
+    {
+      "id": "rel_04",
+      "subject": "char_04",
+      "predicate": "est_demi_sœur_de",
+      "object": "char_01",
+      "type": "familiale"
+    },
+    {
+      "id": "rel_05",
+      "subject": "char_02",
+      "predicate": "maltraite",
+      "object": "char_01",
+      "type": "conflictuelle"
+    },
+    {
+      "id": "rel_06",
+      "subject": "char_05",
+      "predicate": "aide",
+      "object": "char_01",
+      "type": "aide / magique"
+    },
+    {
+      "id": "rel_07",
+      "subject": "char_06",
+      "predicate": "tombe_amoureux_de",
+      "object": "char_01",
+      "type": "romantique"
+    },
+    {
+      "id": "rel_08",
+      "subject": "char_01",
+      "predicate": "pardonne",
+      "object": "char_03",
+      "type": "morale"
+    },
+    {
+      "id": "rel_09",
+      "subject": "char_01",
+      "predicate": "pardonne",
+      "object": "char_04",
+      "type": "morale"
+    },
+    {
+      "id": "rel_10",
+      "subject": "char_01",
+      "predicate": "réside_à",
+      "object": "loc_02",
+      "type": "spatiale"
+    },
+    {
+      "id": "rel_11",
+      "subject": "char_06",
+      "predicate": "réside_à",
+      "object": "loc_03",
+      "type": "spatiale"
+    },
+    {
+      "id": "rel_12",
+      "subject": "char_06",
+      "predicate": "épouse",
+      "object": "char_01",
+      "type": "romantique / sociale"
+    }
+  ],
+
+  "rules": [
+    {
+      "id": "rule_01",
+      "description": "Le charme de la fée prend fin à minuit.",
+      "type": "contrainte temporelle",
+      "affects": ["char_01"],
+      "events_concerned": ["evt_10", "evt_12"]
+    },
+    {
+      "id": "rule_02",
+      "description": "Un personnage ne peut se trouver qu'en un seul lieu à la fois.",
+      "type": "contrainte spatiale",
+      "affects": "all"
+    },
+    {
+      "id": "rule_03",
+      "description": "Seule une personne au cœur pur peut être aidée par la fée.",
+      "type": "contrainte morale",
+      "affects": ["char_05"]
+    }
+  ]
+}
