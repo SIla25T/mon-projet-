@@ -1,8 +1,8 @@
 """Classe Relations"""
 from dataclasses import dataclass
-from classe_abstraite import Conte
+from src.classe_abstraite import Conte
 #from input import data
-from texts import data_text1, data_text2
+from src.texts import data_text1, data_text2
 
 @dataclass
 class Relations (Conte):

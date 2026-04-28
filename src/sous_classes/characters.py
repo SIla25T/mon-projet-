@@ -20,3 +20,5 @@ class Characters (Conte):
 
 characters_text1 = [Characters(**character) for character in data_text1['characters']]
 characters_text2 = [Characters(**character) for character in data_text2['characters']]
+
+print(characters_text1)
