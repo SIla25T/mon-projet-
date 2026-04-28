@@ -1,16 +1,16 @@
 <<<<<<< Updated upstream
 """classe Rules"""
 from dataclasses import dataclass
-from src.classe_abstraite import Conte
+from sous_classes.classe_abstraite import Conte
 #from input import data
-from src.texts import data_text1, data_text2
+from input import data_text1, data_text2
 
 @dataclass
 class Rules(Conte):
     """classe pour les elememts regles des fichiers json"""
     text : int
     id : str
-    description : str
+    description : str # a comparer
     affects : list # pas toujour
     event_concerned : list
     def conflit(self):

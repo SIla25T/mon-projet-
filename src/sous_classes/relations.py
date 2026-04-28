@@ -1,18 +1,18 @@
 <<<<<<< Updated upstream
 """Classe Relations"""
 from dataclasses import dataclass
-from src.classe_abstraite import Conte
+from classe_abstraite import Conte
 #from input import data
-from src.texts import data_text1, data_text2
+from input import data_text1, data_text2
 
 @dataclass
 class Relations (Conte):
     """classe pour les elememts relation des fichiers json"""
-    text: int
+    text: int 
     id: str
-    subject : str
-    predicate : str
-    object : str
+    subject : str # a comparer
+    predicate : str 
+    object : str # a comparer
     type : str
     def conflit(self):
         """trouve les conflits"""
