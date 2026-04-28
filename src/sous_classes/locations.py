@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 """Classe Locations"""
 from dataclasses import dataclass
 from classe_abstraite import Conte

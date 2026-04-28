@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 """Classe Relations"""
 from dataclasses import dataclass
 from src.classe_abstraite import Conte

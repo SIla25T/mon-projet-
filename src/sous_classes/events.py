@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 """classe Events"""
 from dataclasses import dataclass
 from src.classe_abstraite import Conte

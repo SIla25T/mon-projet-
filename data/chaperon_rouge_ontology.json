@@ -1,0 +1,367 @@
+{
+  "meta": {
+    "title": "Le Petit Chaperon Rouge",
+    "author": "Charles Perrault / Frères Grimm",
+    "year_perrault": 1697,
+    "year_grimm": 1812,
+    "source": "https://www.gutenberg.org/ebooks/19752",
+    "language": "fr",
+    "domain": "conte merveilleux"
+  },
+
+  "characters": [
+    {
+      "id": "char_01",
+      "name": "Le Petit Chaperon Rouge",
+      "aliases": ["la petite fille", "l'enfant"],
+      "role": "protagoniste",
+      "gender": "F",
+      "traits": ["naïve", "courageuse", "désobéissante", "curieuse"],
+      "status": "vivant"
+    },
+    {
+      "id": "char_02",
+      "name": "La Mère",
+      "aliases": ["la maman"],
+      "role": "secondaire",
+      "gender": "F",
+      "traits": ["attentionnée", "prudente"],
+      "status": "vivant"
+    },
+    {
+      "id": "char_03",
+      "name": "La Grand-Mère",
+      "aliases": ["mémé", "la vieille dame"],
+      "role": "victime",
+      "gender": "F",
+      "traits": ["fragile", "aimante"],
+      "status": "en danger"
+    },
+    {
+      "id": "char_04",
+      "name": "Le Loup",
+      "aliases": ["le grand méchant loup", "la bête"],
+      "role": "antagoniste",
+      "gender": "M",
+      "traits": ["rusé", "cruel", "manipulateur", "patient"],
+      "status": "vivant"
+    },
+    {
+      "id": "char_05",
+      "name": "Le Chasseur",
+      "aliases": ["le bûcheron", "le veneur"],
+      "role": "sauveur",
+      "gender": "M",
+      "traits": ["courageux", "fort", "protecteur"],
+      "status": "vivant",
+      "note": "présent dans la version Grimm uniquement"
+    }
+  ],
+
+  "locations": [
+    {
+      "id": "loc_01",
+      "name": "Maison de la mère",
+      "type": "habitation",
+      "description": "Point de départ du voyage, demeure de la fillette et de sa mère.",
+      "atmosphere": "chaleureuse et sécurisante"
+    },
+    {
+      "id": "loc_02",
+      "name": "La Forêt",
+      "type": "nature / extérieur",
+      "description": "Forêt sombre et dangereuse traversée par le chemin.",
+      "atmosphere": "menaçante et séduisante"
+    },
+    {
+      "id": "loc_03",
+      "name": "Le Chemin",
+      "type": "passage",
+      "parent_location": "loc_02",
+      "description": "Chemin direct vers la maison de la grand-mère que la fillette doit suivre.",
+      "atmosphere": "neutre"
+    },
+    {
+      "id": "loc_04",
+      "name": "La Clairière aux fleurs",
+      "type": "nature",
+      "parent_location": "loc_02",
+      "description": "Lieu de distraction où le chaperon rouge s'attarde à cueillir des fleurs.",
+      "atmosphere": "trompeusement agréable"
+    },
+    {
+      "id": "loc_05",
+      "name": "Maison de la grand-mère",
+      "type": "habitation",
+      "description": "Destination finale du voyage, lieu du piège du loup.",
+      "atmosphere": "inquiétante"
+    },
+    {
+      "id": "loc_06",
+      "name": "La chambre de la grand-mère",
+      "type": "pièce",
+      "parent_location": "loc_05",
+      "description": "Pièce où la grand-mère est enfermée et où le loup se déguise.",
+      "atmosphere": "sombre et piégée"
+    }
+  ],
+
+  "events": [
+    {
+      "id": "evt_01",
+      "name": "Confection de la galette",
+      "order": 1,
+      "description": "La mère prépare une galette et un petit pot de beurre pour la grand-mère malade.",
+      "participants": ["char_02"],
+      "location": "loc_01",
+      "type": "quotidien",
+      "trigger": null,
+      "consequence": "evt_02"
+    },
+    {
+      "id": "evt_02",
+      "name": "Départ du Chaperon Rouge",
+      "order": 2,
+      "description": "La mère envoie la fillette chez la grand-mère avec un panier et des consignes strictes.",
+      "participants": ["char_01", "char_02"],
+      "location": "loc_01",
+      "type": "départ",
+      "trigger": "evt_01",
+      "consequence": "evt_03"
+    },
+    {
+      "id": "evt_03",
+      "name": "Traversée de la forêt",
+      "order": 3,
+      "description": "Le Chaperon Rouge s'engage sur le chemin à travers la forêt.",
+      "participants": ["char_01"],
+      "location": "loc_03",
+      "type": "voyage",
+      "trigger": "evt_02",
+      "consequence": "evt_04"
+    },
+    {
+      "id": "evt_04",
+      "name": "Rencontre avec le loup",
+      "order": 4,
+      "description": "Le loup aborde le Chaperon Rouge sur le chemin et lui demande où elle va.",
+      "participants": ["char_01", "char_04"],
+      "location": "loc_03",
+      "type": "rencontre / danger",
+      "trigger": "evt_03",
+      "consequence": "evt_05"
+    },
+    {
+      "id": "evt_05",
+      "name": "Divulgation de la destination",
+      "order": 5,
+      "description": "La naïve fillette révèle au loup l'adresse et le chemin de la grand-mère.",
+      "participants": ["char_01", "char_04"],
+      "location": "loc_03",
+      "type": "erreur / naïveté",
+      "trigger": "evt_04",
+      "consequence": "evt_06"
+    },
+    {
+      "id": "evt_06",
+      "name": "Distraction dans la clairière",
+      "order": 6,
+      "description": "Le loup suggère à la fillette de cueillir des fleurs, elle s'attarde dans la clairière.",
+      "participants": ["char_01"],
+      "location": "loc_04",
+      "type": "distraction / piège",
+      "trigger": "evt_05",
+      "consequence": "evt_08"
+    },
+    {
+      "id": "evt_07",
+      "name": "Le loup dévore la grand-mère",
+      "order": 7,
+      "description": "Le loup arrive le premier chez la grand-mère, se fait ouvrir la porte et la dévore.",
+      "participants": ["char_03", "char_04"],
+      "location": "loc_06",
+      "type": "attaque",
+      "trigger": "evt_05",
+      "consequence": "evt_08"
+    },
+    {
+      "id": "evt_08",
+      "name": "Déguisement du loup",
+      "order": 8,
+      "description": "Le loup enfile les habits de la grand-mère et s'allonge dans son lit.",
+      "participants": ["char_04"],
+      "location": "loc_06",
+      "type": "tromperie",
+      "trigger": "evt_07",
+      "consequence": "evt_09"
+    },
+    {
+      "id": "evt_09",
+      "name": "Arrivée du Chaperon Rouge",
+      "order": 9,
+      "description": "La fillette frappe à la porte et entre dans la maison de la grand-mère.",
+      "participants": ["char_01"],
+      "location": "loc_05",
+      "type": "arrivée",
+      "trigger": "evt_06",
+      "consequence": "evt_10"
+    },
+    {
+      "id": "evt_10",
+      "name": "Dialogue du loup et du chaperon",
+      "order": 10,
+      "description": "Le célèbre échange : la fillette remarque les grandes oreilles, les grands yeux, les grandes mains et la grande bouche du loup déguisé.",
+      "participants": ["char_01", "char_04"],
+      "location": "loc_06",
+      "type": "suspense / dialogue",
+      "trigger": "evt_09",
+      "consequence": "evt_11"
+    },
+    {
+      "id": "evt_11",
+      "name": "Le loup dévore le Chaperon Rouge",
+      "order": 11,
+      "description": "Le loup se révèle et dévore la fillette (version Perrault : fin tragique).",
+      "participants": ["char_01", "char_04"],
+      "location": "loc_06",
+      "type": "climax / tragique",
+      "trigger": "evt_10",
+      "consequence": "evt_12",
+      "version": "Perrault (fin) / Grimm (étape)"
+    },
+    {
+      "id": "evt_12",
+      "name": "Intervention du chasseur",
+      "order": 12,
+      "description": "Le chasseur entend des ronflements suspects, ouvre le ventre du loup et délivre la grand-mère et la fillette.",
+      "participants": ["char_01", "char_03", "char_04", "char_05"],
+      "location": "loc_06",
+      "type": "sauvetage",
+      "trigger": "evt_11",
+      "consequence": "evt_13",
+      "version": "Grimm uniquement"
+    },
+    {
+      "id": "evt_13",
+      "name": "Mort du loup",
+      "order": 13,
+      "description": "Le chasseur tue le loup ; les pierres placées dans son ventre l'achèvent.",
+      "participants": ["char_04", "char_05"],
+      "location": "loc_06",
+      "type": "dénouement",
+      "trigger": "evt_12",
+      "consequence": null,
+      "version": "Grimm uniquement"
+    }
+  ],
+
+  "relations": [
+    {
+      "id": "rel_01",
+      "subject": "char_01",
+      "predicate": "est_fille_de",
+      "object": "char_02",
+      "type": "familiale"
+    },
+    {
+      "id": "rel_02",
+      "subject": "char_03",
+      "predicate": "est_grand_mère_de",
+      "object": "char_01",
+      "type": "familiale"
+    },
+    {
+      "id": "rel_03",
+      "subject": "char_04",
+      "predicate": "traque",
+      "object": "char_01",
+      "type": "conflictuelle"
+    },
+    {
+      "id": "rel_04",
+      "subject": "char_04",
+      "predicate": "dévore",
+      "object": "char_03",
+      "type": "hostile"
+    },
+    {
+      "id": "rel_05",
+      "subject": "char_04",
+      "predicate": "se_déguise_en",
+      "object": "char_03",
+      "type": "tromperie"
+    },
+    {
+      "id": "rel_06",
+      "subject": "char_05",
+      "predicate": "sauve",
+      "object": "char_01",
+      "type": "aide"
+    },
+    {
+      "id": "rel_07",
+      "subject": "char_05",
+      "predicate": "sauve",
+      "object": "char_03",
+      "type": "aide"
+    },
+    {
+      "id": "rel_08",
+      "subject": "char_05",
+      "predicate": "tue",
+      "object": "char_04",
+      "type": "hostile"
+    },
+    {
+      "id": "rel_09",
+      "subject": "char_01",
+      "predicate": "voyage_vers",
+      "object": "loc_05",
+      "type": "spatiale"
+    },
+    {
+      "id": "rel_10",
+      "subject": "char_04",
+      "predicate": "réside_temporairement_à",
+      "object": "loc_06",
+      "type": "spatiale"
+    },
+    {
+      "id": "rel_11",
+      "subject": "char_02",
+      "predicate": "envoie",
+      "object": "char_01",
+      "type": "action"
+    }
+  ],
+
+  "rules": [
+    {
+      "id": "rule_01",
+      "description": "Un personnage ne peut se trouver qu'en un seul lieu à la fois.",
+      "type": "contrainte spatiale",
+      "affects": "all"
+    },
+    {
+      "id": "rule_02",
+      "description": "Le loup doit arriver chez la grand-mère AVANT le Chaperon Rouge.",
+      "type": "contrainte temporelle / causale",
+      "affects": ["char_04"],
+      "events_concerned": ["evt_07", "evt_09"]
+    },
+    {
+      "id": "rule_03",
+      "description": "Le chasseur ne peut intervenir qu'après que le loup a agi (version Grimm).",
+      "type": "contrainte narrative",
+      "affects": ["char_05"],
+      "events_concerned": ["evt_12"]
+    },
+    {
+      "id": "rule_04",
+      "description": "La désobéissance du Chaperon Rouge (quitter le chemin) est une condition nécessaire au piège.",
+      "type": "contrainte narrative / morale",
+      "affects": ["char_01"],
+      "events_concerned": ["evt_06"]
+    }
+  ]
+}
