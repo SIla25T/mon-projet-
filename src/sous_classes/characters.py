@@ -2,12 +2,11 @@
 from dataclasses import dataclass
 from classe_abstraite import Conte
 #from input import data
-from texts import data_text1, data_text2
+from input import data_text1, data_text2
 
 @dataclass
 class Characters (Conte):
     """classe pour les elememts personnage des fichiers json"""
-    text: int
     id: str
     name: str
     aliases: list
