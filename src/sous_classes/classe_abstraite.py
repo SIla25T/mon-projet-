@@ -9,5 +9,6 @@ class ElementOntologie(ABC):
         self.nom = nom
 
     @abstractmethod
-    def conflit(self):
+    def fusionner(self):
         """retourne les conflits entre les contes"""
+    

@@ -13,8 +13,9 @@ class Rules(Conte):
     description : str # a comparer
     affects : list # pas toujour
     event_concerned : list
-    def conflit(self):
+    def fusionner (self):
         """trouve les conflits"""
 
 rules_text1 = [Rules(**rule) for rule in data_text1['rules']]
 rules_text2 = [Rules(**rule) for rule in data_text2['rules']]
+rules_text1.fusionner(rules_text2)

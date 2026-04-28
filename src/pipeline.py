@@ -1,7 +1,15 @@
 import json
 from typing import List
-from sous_classes.characters import Personnage 
+from pathlib import Path
+from sous_classes.characters import Characters 
 from src.strategy import CrossoverStrategy
+from input import input_text
+
+# importation des fichiers jsons => envoie à la fonction input_text
+chemin_1 = Path("src/sous_classes/cendrillon.json")
+chemin_2 = Path("src/sous_classes/chaperon_rouge.json")
+input_text(chemin_1, chemin_2)
+
 
 class OntologieLoader: 
     """ 
