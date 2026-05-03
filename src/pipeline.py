@@ -1,3 +1,5 @@
+"""pipeline qui sert à faire le liens entre les differents fichiers 
+(il n'a a pas de déclaration de fonction ou de classe ou de méthode dans ce fichier.)"""
 import json
 from typing import List
 from pathlib import Path
@@ -8,10 +10,12 @@ from input import input_text
 # importation des fichiers jsons => envoie à la fonction input_text
 chemin_1 = Path("src/sous_classes/cendrillon.json")
 chemin_2 = Path("src/sous_classes/chaperon_rouge.json")
-input_text(chemin_1, chemin_2)
+text1 = input_text(chemin_1)
+text2 = input_text(chemin_2)
 
 
-class OntologieLoader: 
+
+class OntologieLoader: # existe déjà dans input.py
     """ 
     Classe responsable de la lecture des fichiers json
     """
@@ -20,12 +24,12 @@ class OntologieLoader:
             data= json.load(f)
             return data
 
-class OntologieFactory:
+class OntologieFactory: # c'est exactement ce que font les classes Characters, Locations, Events, Relations et Rules dans leurs fichiers respectifs
     """ 
     Classe responsable de la création des objets à partir des données lues
     """
     def creer_ontologie(self, data_raw: dict):
-        # extraire liste du fichier json pour ensuite créer les objets 
+        # extraire liste du fichier json pour ensuite créer les objets
         pass
     def creer_personnage(self, liste_json: List[dict]) -> List[Personnage]:
         # créer les personnages à partir de la liste du fichier json
@@ -41,7 +45,7 @@ class OntologieFactory:
             mes_personnages.append(nouveau_perso)
         return mes_personnages
 
-class PipelineFusion: 
+class PipelineFusion:
     """ 
     Classe responsable de la fusion des ontologies 
     """
@@ -49,18 +53,18 @@ class PipelineFusion:
         # Initialiser les composants nécessaires pour la fusion
         self.loader = OntologieLoader()
         self.factory = OntologieFactory()
-        self.FusionStrategy = CrossoverStrategy()  
-    
+        self.FusionStrategy = CrossoverStrategy()
+
     def executer(self, chemin_a: str, chemin_b: str, chemin_sortie: str):
         print("Début de la fusion des ontologies")
-        
+
         # Lire les fichiers d'entrée
         data_a = self.loader.lire_fichier(chemin_a)
         data_b = self.loader.lire_fichier(chemin_b)
         # Créer les objets à partir des données lues
         persos_a = self.factory.creer_personnages(data_a["characters"])
         persos_b = self.factory.creer_personnages(data_b["characters"])
-        
+
         # Fusionner les personnages
         print("Fusion des personnages en cours...")
         liste_finale = self.strategie_fusion.fusionner_personnages(persos_a, persos_b)
@@ -69,7 +73,7 @@ class PipelineFusion:
         liste_dictionnaires = []
         for perso in liste_finale:
             liste_dictionnaires.append(perso.exporter())
-        
+
         resultat_final = {
             "meta": {
                 "title": "Ontologie Fusionnée (Crossover)",
@@ -81,8 +85,3 @@ class PipelineFusion:
             json.dump(resultat_final, f_sortie, ensure_ascii=False, indent=4)
         print(f"Sauvegarde terminée dans {chemin_sortie} !")
         return chemin_sortie
-    
-
-
-
-        
