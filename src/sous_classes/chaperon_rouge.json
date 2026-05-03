@@ -10,16 +10,16 @@
 
   "characters": [
     {
-      "id": "char_01",
+      "id": "char_02",
       "name": "Cendrillon",
-      "aliases": ["la belle enfant", "Cucendron"],
-      "role": "protagoniste",
+      "aliases": ["la princesse au chaussures de verres", "la plus inortunée des princesses"],
+      "role": "antagoniste",
       "gender": "F",
-      "traits": ["douce", "courageuse", "patiente", "belle"],
+      "traits": ["joyeuse", "naive", "maladroite", "imprudente"],
       "status": "vivant"
     },
     {
-      "id": "char_02",
+      "id": "char_01",
       "name": "La Marâtre",
       "aliases": ["la belle-mère"],
       "role": "antagoniste",

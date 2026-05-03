@@ -3,6 +3,7 @@
 from pathlib import Path
 from input import input_text
 from sous_classes.characters import Characters
+from sous_classes.locations import Locations
 
 # importation des fichiers jsons => envoie à la fonction input_text
 chemin_1 = Path("src/sous_classes/cendrillon.json")
@@ -12,8 +13,11 @@ text2 = input_text(chemin_2)
 
 characters_text1 = [Characters(**character) for character in text1['characters']]
 characters_text2 = [Characters(**character) for character in text2['characters']]
-character_fusion = characters_text1.fusionner(characters_text2)
+character_fusion = Characters.fusionner(characters_text1, characters_text2)
 
-print(characters_text1)
-print(characters_text2.id)
 print(character_fusion)
+
+locations_text1 = [Locations(**location) for location in text1['locations']]
+locations_text2 = [Locations(**location) for location in text2['locations']]
+location_fusion = Locations.fusionner(locations_text1, locations_text2)
+
