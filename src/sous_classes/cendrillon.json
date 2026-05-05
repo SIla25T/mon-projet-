@@ -390,7 +390,7 @@
       "id": "rule_02",
       "description": "Un personnage ne peut se trouver qu'en un seul lieu à la fois.",
       "type": "contrainte spatiale",
-      "affects": "all"
+      "affects": ["all"]
     },
     {
       "id": "rule_03",

@@ -7,10 +7,12 @@ class Rules(ElementOntologie):
     """classe pour les elememts regles des fichiers json"""
     id : str
     description : str # a comparer
-    affects : list = field(default = None) # pas toujour
-    event_concerned : list
+    type : list
+    affects : list = field(default_factory=list) # pas toujour
+    events_concerned : list = field(default_factory=list)
     # fusionner => mettre un conteur pour incrementer l'id ^
         #       => descriptions = à comparer
+        #       => type = a ajouter ?
         #       => fusionner les affects
         #       => fusionner les elements concernés
     @classmethod
@@ -33,8 +35,8 @@ class Rules(ElementOntologie):
                         regle_deja_range.id = f"char_{i}"
                     regle_deja_range.affects.extend(regle_b.affects)
                     regle_deja_range.affects = list(set(regle_deja_range.affects))
-                    regle_deja_range.event_concerned.extend(regle_b.event_concerned)
-                    regle_deja_range.event_concerned = list(set(regle_deja_range.event_concerned))
+                    regle_deja_range.events_concerned.extend(regle_b.events_concerned)
+                    regle_deja_range.events_concerned = list(set(regle_deja_range.events_concerned))
                     conflit= True
                     i=i+1
                     break

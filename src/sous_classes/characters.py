@@ -8,10 +8,10 @@ class Characters (ElementOntologie):
     id: str
     name: str
     aliases: list
-    role: str
+    role: list
     gender: str
     traits: list
-    status: str
+    status: list
     # fusionner => mettre un conteur pour incrementer l'id ^
         #       => fusionner les roles ?
         #       => fusionner les aliases ^
@@ -45,4 +45,6 @@ class Characters (ElementOntologie):
                     break
             if not conflit:
                 personnages_fusionnes.append(perso_b)
+        # modification des id dans text1 et text2
+
         return personnages_fusionnes

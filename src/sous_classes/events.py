@@ -17,8 +17,9 @@ class Events (ElementOntologie):
      # fusion lieux => incrémentation des id
     #              => name = ce qui justifie la fusion
     #              => order => incrémenter / deux ordres paralleles ?
-    #              => description => transformer en liste ?/faire une string plus longue/en eliminer un ?
-    #              => participants => ajouter les personnages (personnages ont plus les memes id !!!)
+    #              => description => transformer en liste ?/faire une string plus
+    #                   longue/en eliminer un ?
+    #              => participants => ajouter les personnages (personnages ont plus les memes id!!)
     #              => location ? => ajouter les lieux (ont plus les memes id !!!)
     #              => type => ?
     #              => trigger => attention incrémentation d'id

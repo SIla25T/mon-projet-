@@ -35,10 +35,10 @@ class Relations (ElementOntologie):
                         relation_deja_range.id = f"char_0{i}"
                     elif i>=10 :
                         relation_deja_range.id = f"char_{i}"
-                    relation_deja_range.predicate.extend(relation_b.predicate)
-                    relation_deja_range.predicate = list(set(relation_deja_range.predicate))
-                    relation_deja_range.type.extend(relation_b.type)
-                    relation_deja_range.type = list(set(relation_deja_range.type))
+                    #relation_deja_range.predicate.extend(relation_b.predicate)
+                    #relation_deja_range.predicate = list(set(relation_deja_range.predicate))
+                    #relation_deja_range.type.extend(relation_b.type)
+                    #relation_deja_range.type = list(set(relation_deja_range.type))
                     conflit= True
                     i=i+1
                     break
