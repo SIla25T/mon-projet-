@@ -1,21 +1,47 @@
-<<<<<<< Updated upstream
 """Classe Relations"""
 from dataclasses import dataclass
-from classe_abstraite import Conte
-#from input import data
-from input import data_text1, data_text2
+from sous_classes.classe_abstraite import ElementOntologie
 
 @dataclass
-class Relations (Conte):
+class Relations (ElementOntologie):
     """classe pour les elememts relation des fichiers json"""
-    text: int 
     id: str
     subject : str # a comparer
-    predicate : str 
+    predicate : str
     object : str # a comparer
     type : str
     def conflit(self):
         """trouve les conflits"""
 
-relations_text1 = [Relations(**relation) for relation in data_text1['relations']]
-relations_text2 = [Relations(**relation) for relation in data_text2['relations']]
+    # fusionner => mettre un conteur pour incrementer l'id ^ => problème
+            #       => si sujet et objet sont les memes => enrichire
+            #       => predicates => liste ?
+            #       => type => liste ?
+    @classmethod
+    def fusionner(cls, data_text_1, data_text_2):
+        """trouve les conflits"""
+        # Implémentation du crossover pour fusionner les relations
+        relations_fusionnes = []
+        i=1
+        for relation_a in data_text_1:
+            relations_fusionnes.append(relation_a)
+        for relation_b in data_text_2:
+            conflit= False
+
+            for relation_deja_range in relations_fusionnes:
+                if relation_b.subject == relation_deja_range.subject and relation_b.object == relation_deja_range.object :
+                    print(f"Fusion en cours : la relation entre {relation_b.subject} et {relation_b.object} est dans les deux histoires !")
+                    if i<10 :
+                        relation_deja_range.id = f"char_0{i}"
+                    elif i>=10 :
+                        relation_deja_range.id = f"char_{i}"
+                    relation_deja_range.predicate.extend(relation_b.predicate)
+                    relation_deja_range.predicate = list(set(relation_deja_range.predicate))
+                    relation_deja_range.type.extend(relation_b.type)
+                    relation_deja_range.type = list(set(relation_deja_range.type))
+                    conflit= True
+                    i=i+1
+                    break
+            if not conflit:
+                relations_fusionnes.append(relation_b)
+        return relations_fusionnes

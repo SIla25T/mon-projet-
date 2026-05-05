@@ -28,7 +28,7 @@ class Characters (ElementOntologie):
             personnages_fusionnes.append(perso_a)
         for perso_b in data_text_2:
             conflit= False
-      
+
             for perso_deja_range in personnages_fusionnes:
                 if perso_b.name == perso_deja_range.name:
                     print(f"Fusion en cours : {perso_b.name} est dans les deux histoires !")
