@@ -14,7 +14,7 @@ class Events (ElementOntologie):
     type: str
     trigger : str
     consequence: str
-     # fusion lieux => incrémentation des id
+     # fusion lieux :
     #              => name = ce qui justifie la fusion
     #              => order => incrémenter / deux ordres paralleles ?
     #              => description => transformer en liste ?/faire une string plus
@@ -29,7 +29,6 @@ class Events (ElementOntologie):
         """trouve les conflits et les résoud"""
         # Implémentation du crossover pour fusionner les lieux
         evenements_fusionnes = []
-        i=1
         for evenement_a in data_text_1:
             evenements_fusionnes.append(evenement_a)
         for evenement_b in data_text_2:
@@ -38,14 +37,9 @@ class Events (ElementOntologie):
             for evenement_deja_range in evenements_fusionnes:
                 if evenement_b.name == evenement_deja_range.name:
                     print(f"Fusion en cours : {evenement_b.name} est dans les deux histoires !")
-                    if i<10 :
-                        evenement_deja_range.id = f"char_0{i}"
-                    elif i>=10 :
-                        evenement_deja_range.id = f"char_{i}"
                     evenement_deja_range.participants.extend(evenement_b.participants)
                     evenement_deja_range.participants = list(set(evenement_deja_range.participants))
                     conflit= True
-                    i=i+1
                     break
             if not conflit:
                 evenements_fusionnes.append(evenement_b)

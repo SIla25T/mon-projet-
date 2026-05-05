@@ -13,7 +13,7 @@ class Relations (ElementOntologie):
     def conflit(self):
         """trouve les conflits"""
 
-    # fusionner => mettre un conteur pour incrementer l'id ^ => problème
+    # fusionner :
             #       => si sujet et objet sont les memes => enrichire
             #       => predicates => liste ?
             #       => type => liste ?
@@ -22,7 +22,6 @@ class Relations (ElementOntologie):
         """trouve les conflits"""
         # Implémentation du crossover pour fusionner les relations
         relations_fusionnes = []
-        i=1
         for relation_a in data_text_1:
             relations_fusionnes.append(relation_a)
         for relation_b in data_text_2:
@@ -31,16 +30,11 @@ class Relations (ElementOntologie):
             for relation_deja_range in relations_fusionnes:
                 if relation_b.subject == relation_deja_range.subject and relation_b.object == relation_deja_range.object :
                     print(f"Fusion en cours : la relation entre {relation_b.subject} et {relation_b.object} est dans les deux histoires !")
-                    if i<10 :
-                        relation_deja_range.id = f"char_0{i}"
-                    elif i>=10 :
-                        relation_deja_range.id = f"char_{i}"
                     #relation_deja_range.predicate.extend(relation_b.predicate)
                     #relation_deja_range.predicate = list(set(relation_deja_range.predicate))
                     #relation_deja_range.type.extend(relation_b.type)
                     #relation_deja_range.type = list(set(relation_deja_range.type))
                     conflit= True
-                    i=i+1
                     break
             if not conflit:
                 relations_fusionnes.append(relation_b)

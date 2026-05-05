@@ -10,7 +10,7 @@ class Rules(ElementOntologie):
     type : list
     affects : list = field(default_factory=list) # pas toujour
     events_concerned : list = field(default_factory=list)
-    # fusionner => mettre un conteur pour incrementer l'id ^
+    # fusionner :
         #       => descriptions = à comparer
         #       => type = a ajouter ?
         #       => fusionner les affects
@@ -20,7 +20,6 @@ class Rules(ElementOntologie):
         """trouve les conflits"""
     # Implémentation du crossover pour fusionner les personnages
         regles_fusionnes = []
-        i=1
         for regle_a in data_text_1:
             regles_fusionnes.append(regle_a)
         for regle_b in data_text_2:
@@ -29,16 +28,11 @@ class Rules(ElementOntologie):
             for regle_deja_range in regles_fusionnes:
                 if regle_b.description == regle_deja_range.description:
                     print(f"Fusion en cours : {regle_b.description} est dans les deux histoires !")
-                    if i<10 :
-                        regle_deja_range.id = f"char_0{i}"
-                    elif i>=10 :
-                        regle_deja_range.id = f"char_{i}"
                     regle_deja_range.affects.extend(regle_b.affects)
                     regle_deja_range.affects = list(set(regle_deja_range.affects))
                     regle_deja_range.events_concerned.extend(regle_b.events_concerned)
                     regle_deja_range.events_concerned = list(set(regle_deja_range.events_concerned))
                     conflit= True
-                    i=i+1
                     break
             if not conflit:
                 regles_fusionnes.append(regle_b)
