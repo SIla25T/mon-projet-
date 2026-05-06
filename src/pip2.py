@@ -3,6 +3,7 @@
 from pathlib import Path
 from input import input_text
 from traitement_id import traiter_id
+from sous_classes.metas import Metas
 from sous_classes.characters import Characters
 from sous_classes.locations import Locations
 from sous_classes.events import Events
@@ -16,11 +17,16 @@ chemin_2 = Path("src/sous_classes/chaperon_rouge.json")
 entree_1 = input_text(chemin_1)
 entree_2 = input_text(chemin_2)
 
-# traitement de l'id pour pas qu'elles ne se confondent
+# traitement de l'id pour pas qu'elles ne se confondent pas
 chemin_3 = Path("src/sous_classes/text1_id.json")
 chemin_4 = Path("src/sous_classes_text2_id")
 text1 = traiter_id(entree_1, "1")
 text2 = traiter_id(entree_2, "2")
+
+# instanciation des métas données
+metas_text1 = [Metas(**meta) for meta in text1['meta']]
+metas_text2 = [Metas(**meta) for meta in text2['meta']]
+meta_fusion = Metas.fusionner(metas_text1, metas_text2)
 
 # instanciation et fusion des personnages
 characters_text1 = [Characters(**character) for character in text1['characters']]
@@ -54,4 +60,4 @@ print(rules_fusions)
 
 # exporter le tout dans un fichier json
 path_output = Path("src/sous_classes/output.json")
-output(character_fusion,location_fusion,event_fusion,relations_fusions,rules_fusions, path_output)
+output(metas_fusion, character_fusion,location_fusion,event_fusion,relations_fusions,rules_fusions, path_output)
