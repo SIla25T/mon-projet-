@@ -23,10 +23,10 @@ chemin_4 = Path("src/sous_classes_text2_id")
 text1 = traiter_id(entree_1, "1")
 text2 = traiter_id(entree_2, "2")
 
-# instanciation des métas données
-metas_text1 = [Metas(**meta) for meta in text1['meta']]
-metas_text2 = [Metas(**meta) for meta in text2['meta']]
-meta_fusion = Metas.fusionner(metas_text1, metas_text2)
+# # instanciation des métas données
+# metas_text1 = [Metas(**meta) for meta in text1['meta']]
+# metas_text2 = [Metas(**meta) for meta in text2['meta']]
+# meta_fusion = Metas.fusionner(metas_text1, metas_text2)
 
 # instanciation et fusion des personnages
 characters_text1 = [Characters(**character) for character in text1['characters']]
@@ -59,5 +59,5 @@ rules_fusions = Rules.fusionner(rules_text1, rules_text2)
 print(rules_fusions)
 
 # exporter le tout dans un fichier json
-path_output = Path("src/sous_classes/output.json")
-output(metas_fusion, character_fusion,location_fusion,event_fusion,relations_fusions,rules_fusions, path_output)
+# path_output = Path("src/sous_classes/output.json")
+# output(metas_fusion, character_fusion,location_fusion,event_fusion,relations_fusions,rules_fusions, path_output)
