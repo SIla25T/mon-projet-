@@ -10,5 +10,4 @@ def traiter_id(text, nb_text):
     regex1 = r"(\w+_\d+)"
     text_modifier_id = re.sub(regex1, regex, text_a_modifier)
     text_dict = ast.literal_eval(text_modifier_id)
-    print (text_dict)
     return text_dict

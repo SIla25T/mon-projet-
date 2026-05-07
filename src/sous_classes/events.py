@@ -14,7 +14,7 @@ class Events (ElementOntologie):
     type: str
     trigger : str
     consequence: str
-     # fusion lieux :
+     # fusion events :
     #              => name = ce qui justifie la fusion
     #              => order => incrémenter / deux ordres paralleles ?
     #              => description => transformer en liste ?/faire une string plus
