@@ -286,7 +286,7 @@
       "participants": ["char_01", "char_06", "char_03", "char_04"],
       "location": "loc_03",
       "type": "dénouement heureux",
-      "trigger": "evt_14",
+      "trigger": "evt_14_0",
       "consequence": null
     }
   ],
