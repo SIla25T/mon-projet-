@@ -1,7 +1,7 @@
 """pipeline qui sert à faire le liens entre les differents fichiers 
 (il n'a a pas de déclaration de fonction ou de classe ou de méthode dans ce fichier.)"""
 from pathlib import Path
-from input import input_text
+from inputs import input_text
 from traitement_id import traiter_id
 from sous_classes.metas import Metas
 from sous_classes.characters import Characters
