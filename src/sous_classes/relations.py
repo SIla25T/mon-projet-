@@ -32,6 +32,7 @@ class Relations (ElementOntologie):
                     print(f"Fusion en cours : la relation entre {relation_b.subject} et {relation_b.object} est dans les deux histoires !")
                     #relation_deja_range.predicate.extend(relation_b.predicate)
                     #relation_deja_range.predicate = list(set(relation_deja_range.predicate))
+                    
                     #relation_deja_range.type.extend(relation_b.type)
                     #relation_deja_range.type = list(set(relation_deja_range.type))
                     conflit= True
