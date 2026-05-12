@@ -28,17 +28,14 @@ class Relations (ElementOntologie):
                 if (set(relation_b.subject) & set(relation_deja_range.subject)) and \
                    (set(relation_b.object) & set(relation_deja_range.object)):
                     print(f"Fusion en cours : la relation entre {relation_b.subject} et {relation_b.object} est dans les deux histoires !")
-<<<<<<< Updated upstream
                     #relation_deja_range.predicate.extend(relation_b.predicate)
                     #relation_deja_range.predicate = list(set(relation_deja_range.predicate))
 
                     #relation_deja_range.type.extend(relation_b.type)
                     #relation_deja_range.type = list(set(relation_deja_range.type))
                     relation_deja_range.id = traiter_id_classe(relation_deja_range.id)
-=======
                     relation_deja_range.predicate= list(set(relation_deja_range.predicate + relation_b.predicate))
                     relation_deja_range.type = list(set(relation_deja_range.type + relation_b.type))
->>>>>>> Stashed changes
                     conflit= True
                     break
             if not conflit:

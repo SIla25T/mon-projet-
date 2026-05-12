@@ -3,7 +3,7 @@
 from pathlib import Path
 from input import input_text
 from traitement_id import traiter_id
-from sous_classes.metas import Metas 
+from sous_classes.metas import Metas
 from sous_classes.characters import Characters
 from sous_classes.locations import Locations
 from sous_classes.events import Events
@@ -67,5 +67,4 @@ print(rules_fusions)
 
 # exporter le tout dans un fichier json
 path_output = Path("src/sous_classes/output.json")
-output1 = output(character_fusion, location_fusion, event_fusion, relations_fusions, rules_fusions, path_output)
-print(output1)
+output(character_fusion, location_fusion, event_fusion, relations_fusions, rules_fusions, path_output)

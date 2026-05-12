@@ -34,3 +34,5 @@ def traiter_id_classe(classe_id):
     id_minimal = re.sub(regex1, regex2, id_modifier)
     id_final = f"{id_minimal}_0"
     return id_final
+
+#def traitement_location_ordre():
