@@ -1,5 +1,6 @@
 """classe Rules"""
 from dataclasses import dataclass, field
+from traitement_id import traiter_id_classe
 from sous_classes.classe_abstraite import ElementOntologie
 
 @dataclass
@@ -32,6 +33,7 @@ class Rules(ElementOntologie):
                     regle_deja_range.affects = list(set(regle_deja_range.affects))
                     regle_deja_range.events_concerned.extend(regle_b.events_concerned)
                     regle_deja_range.events_concerned = list(set(regle_deja_range.events_concerned))
+                    regle_deja_range.id = traiter_id_classe(regle_deja_range.id)
                     conflit= True
                     break
             if not conflit:

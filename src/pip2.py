@@ -24,10 +24,10 @@ text1 = traiter_id(entree_1, "1")
 text2 = traiter_id(entree_2, "2")
 
 
-# # instanciation des métas données
-# metas_text1 = [Metas(**meta) for meta in text1['meta']]
-# metas_text2 = [Metas(**meta) for meta in text2['meta']]
-# meta_fusion = Metas.fusionner(metas_text1, metas_text2)
+# instanciation des métas données
+metas_text1 = [Metas(**text1["meta"])]
+metas_text2 = [Metas(**text2['meta'])]
+meta_fusion = Metas.fusionner(metas_text1, metas_text2)
 
 # instanciation et fusion des personnages
 characters_text1 = [Characters(**character) for character in text1['characters']]
@@ -41,7 +41,7 @@ print(character_fusion)
 # instanciation et fusion des lieux
 locations_text1 = [Locations(**location) for location in text1_traiter_char['locations']]
 locations_text2 = [Locations(**location) for location in text2_traiter_char['locations']]
-location_fusionner = Locations.fusionner(locations_text1, locations_text2)
+location_fusionner = Locations.fusionner(locations_text1, locations_text2, text1_traiter_char, text2_traiter_char)
 location_fusion = location_fusionner[0]
 text1_traiter_loc = location_fusionner[1]
 text2_traiter_loc = location_fusionner[2]
@@ -50,21 +50,22 @@ print(location_fusion)
 # instanciation et fusion des evenements
 events_text1 = [Events(**event) for event in text1_traiter_loc['events']]
 events_text2 = [Events(**event) for event in text2_traiter_loc['events']]
-event_fusion = Locations.fusionner(events_text1, events_text2)[0]
+event_fusion = Events.fusionner(events_text1, events_text2)
 print(event_fusion)
 
 # instanciation et fusion des relations
 relations_text1 = [Relations(**relation) for relation in text1_traiter_loc['relations']]
 relations_text2 = [Relations(**relation) for relation in text2_traiter_char['relations']]
-relations_fusions = Relations.fusionner(relations_text1, relations_text2)[0]
+relations_fusions = Relations.fusionner(relations_text1, relations_text2)
 print(relations_fusions)
 
 # instanciation et fusion des regles
 rules_text1 = [Rules(**rule) for rule in text1_traiter_loc['rules']]
 rules_text2 = [Rules(**rule) for rule in text2_traiter_loc['rules']]
-rules_fusions = Rules.fusionner(rules_text1, rules_text2)[0]
+rules_fusions = Rules.fusionner(rules_text1, rules_text2)
 print(rules_fusions)
 
-# # exporter le tout dans un fichier json
-# path_output = Path("src/sous_classes/output.json")
-# output(meta_fusion, character_fusion, location_fusion, event_fusion, relations_fusions, rules_fusions, path_output)
+# exporter le tout dans un fichier json
+path_output = Path("src/sous_classes/output.json")
+output1 = output(character_fusion, location_fusion, event_fusion, relations_fusions, rules_fusions, path_output)
+print(output1)

@@ -1,5 +1,6 @@
 """classe Events"""
 from dataclasses import dataclass
+from traitement_id import traiter_id_classe
 from .classe_abstraite import ElementOntologie
 
 @dataclass
@@ -39,6 +40,7 @@ class Events (ElementOntologie):
                     print(f"Fusion en cours : {evenement_b.name} est dans les deux histoires !")
                     evenement_deja_range.participants.extend(evenement_b.participants)
                     evenement_deja_range.participants = list(set(evenement_deja_range.participants))
+                    evenement_deja_range.id = traiter_id_classe(evenement_deja_range.id)
                     conflit= True
                     break
             if not conflit:

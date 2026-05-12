@@ -1,5 +1,6 @@
 """Classe Relations"""
 from dataclasses import dataclass
+from traitement_id import traiter_id_classe
 from sous_classes.classe_abstraite import ElementOntologie
 
 @dataclass
@@ -32,9 +33,10 @@ class Relations (ElementOntologie):
                     print(f"Fusion en cours : la relation entre {relation_b.subject} et {relation_b.object} est dans les deux histoires !")
                     #relation_deja_range.predicate.extend(relation_b.predicate)
                     #relation_deja_range.predicate = list(set(relation_deja_range.predicate))
-                    
+
                     #relation_deja_range.type.extend(relation_b.type)
                     #relation_deja_range.type = list(set(relation_deja_range.type))
+                    relation_deja_range.id = traiter_id_classe(relation_deja_range.id)
                     conflit= True
                     break
             if not conflit:

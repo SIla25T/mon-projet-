@@ -1,6 +1,7 @@
 
 """Classe Locations"""
 from dataclasses import dataclass, field
+from traitement_id import traiter_id_classe, traiter_id_text
 from .classe_abstraite import ElementOntologie
 
 @dataclass
@@ -20,7 +21,7 @@ class Locations(ElementOntologie):
     #              => athmosphère ?
     #              => parent_location ?
     @classmethod
-    def fusionner(cls, data_text_1, data_text_2):
+    def fusionner(cls, data_text_1, data_text_2, text1, text2):
         """trouve les conflits"""
     # Implémentation du crossover pour fusionner les lieux
         lieux_fusionnes = []
@@ -33,7 +34,11 @@ class Locations(ElementOntologie):
                 if lieu_b.name == lieu_deja_range.name:
                     print(f"Fusion en cours : {lieu_b.name} est dans les deux histoires !")
                     conflit= True
+                    # changement id text1
+                    lieu_deja_range.id = traiter_id_classe(lieu_deja_range.id)
+                    text1_id_lieu = traiter_id_text(text1, lieu_deja_range.id)
+                    text2_id_lieu = traiter_id_text(text2, lieu_b.id)
                     break
             if not conflit:
                 lieux_fusionnes.append(lieu_b)
-        return lieux_fusionnes
+        return lieux_fusionnes, text1_id_lieu, text2_id_lieu
